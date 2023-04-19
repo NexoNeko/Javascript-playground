@@ -1,0 +1,2 @@
+# pixiHotwire
+Learning pixi.js
