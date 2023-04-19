@@ -1,2 +1,2 @@
 # pixiHotwire
-Learning pixi.js
+This is a simple pixi boilerplate to learn pixi.js functionality.
