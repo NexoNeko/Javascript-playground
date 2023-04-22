@@ -1,2 +1,2 @@
-# pixiHotwire
-This is a simple pixi boilerplate to learn pixi.js functionality.
+# Javascript playground
+This repository contains javascript code snippets and just WiP in general.
