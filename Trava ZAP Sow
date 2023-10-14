@@ -1,0 +1,124 @@
+async function enviarScript(scriptText){
+	const lines = scriptText.split(/[\n\t]+/).map(line => line.trim()).filter(line => line);
+	main = document.querySelector("#main"),
+	textarea = main.querySelector(`div[contenteditable="true"]`)
+	
+	if(!textarea) throw new Error("Não há uma conversa aberta")
+	
+	for(const line of lines){
+		console.log(line)
+	
+		textarea.focus();
+		document.execCommand('insertText', false, line);
+		textarea.dispatchEvent(new Event('change', {bubbles: true}));
+	
+		setTimeout(() => {
+			(main.querySelector(`[data-testid="send"]`) || main.querySelector(`[data-icon="send"]`)).click();
+		}, 100);
+		
+		if(lines.indexOf(line) !== lines.length - 1) await new Promise(resolve => setTimeout(resolve, 250));
+	}
+	
+	return lines.length;
+}
+
+enviarScript(`Satanás sobre a guerra
+Humanidade, você chegou ao amargo fim de sua doce degradação. Drene as últimas gotas e não deixe manchas no copo. Pois a GUERRA está sobre você, ao seu redor e dentro de você. Você está submerso na GUERRA de tal forma que não há escapatória. Como um câncer, ela se apoderou de você, se infiltrou furtivamente entre vocês e se enraizou. Nenhuma força na terra pode removê-la. E nenhuma força no Céu o fará. Pois NÓS damos ao Homem o que o Homem exige, não o que ele finge querer. E o Homem que se enche de si mesmo e clama por paz, luz e amor, e alega que seu único desejo é viver em harmonia com os que estão ao seu redor, o Homem que se veste com sobriedade e decência adequadas e segue seus negócios dizendo: "Eu sou civilizado. Eu sou respeitável. Eu sou um ser racional controlando todas as minhas emoções", ele não passa de um tolo ignorante, um hipócrita, um imbecil autoiludido. Pois tudo o que ele realmente quer é Morte, massacre, derramamento de sangue, saque e a histeria violenta e estridente da GUERRA. Esse é seu verdadeiro desejo e nada menos o satisfará verdadeiramente.
+
+Humano, veja a si mesmo! Conheça os verdadeiros desejos de sua alma. Sinta o amor pelo horror, a luxúria pelo sangue, o êxtase de assistir à Morte avançar sobre a terra e cobrar seu tributo.
+
+Quando sua mente está verdadeiramente em paz? Apenas quando seu corpo está em GUERRA.
+
+Quando você está verdadeiramente satisfeito? Apenas quando o sangue está em suas mãos, o ódio em seu coração e a luz da batalha brilhando em seus olhos.
+
+Não se engane. A Morte é uma pura delícia para você. A tortura é uma fascinação suprema. Você consegue desviar os olhos da visão de um corpo espalhado no pavimento após um terrível acidente de automóvel? Ou de um documentário transmitido sobre as técnicas de execução usadas pelo Terceiro Reich durante a Segunda Guerra Mundial? Ou o horror da asfixia e a lenta agonia do destino inevitável do condenado à morte? Ou a curiosidade que seus predadores oferecem durante suas dissecações para revelar o raciocínio por trás de suas ações/atrocidades?
+
+Não, você só consegue ficar fascinado, toda a sua atenção focada na visão macabra. E você conseguiria se forçar a desviar o olhar do monstro contorcendo-se no campo de batalha, fechar os ouvidos para os gritos e gemidos dos homens feridos, fechar os olhos para o sangue e a carne dilacerada? Não, você está enfeitiçado, encantado, exaltado pela imagem luridamente violenta da Morte e do massacre. E com razão.
+
+Pois este é o seu destino, esta é sua única satisfação. Você nasceu para morrer e morrer você deve, a Morte para você deve ser totalmente cataclísmica. Sua própria alma exige isso.
+
+A Guerra é sua inclinação natural, seu irmão de sangue. Compreenda e ame a GUERRA como nada mais na criação. Com a GUERRA, a vida se torna valiosa, pois inevitavelmente se torna Morte. A GUERRA é a sua realização. Na GUERRA, você é forte, corajoso, vital, dinâmico.
+
+Na GUERRA, você é a alma da ação e a fonte de energia ilimitada. Na GUERRA, as regras são destruição, e com destruição, devastação, mutilação violenta da carne humana e o desperdício total da terra; esses são conceitos que você pode entender, são ações às quais você pode se entregar com corpo, mente e alma, e se deleitar nas alegrias da destruição do homem. Eles são sua carne e bebida, tão essenciais para você quanto o ar que você respira. A GUERRA é o seu sangue vital, você provou isso.
+
+Então, erga-se, Humanidade, e seja alegre. Pois a GUERRA você terá em abundância. Não finja mais buscar uma paz estéril. Isso não traz prazer para a sua alma ativa. Delicie-se nas múltiplas delícias da GUERRA. Sinta a luxúria pelo sangue surgindo de suas veias, a antecipação crescente e tensa do momento antes da batalha se iniciar. Sinta o firme agarre no cabo da espada, a dureza fria da coronha da arma estável. Sinta o cheiro do sangue e da pólvora. Ouça os gritos de batalha misturados aos gritos daqueles que morrem. Veja os exércitos se lançando em combate mortal, enquanto a fumaça, a fumaça que tudo envolve, gira e se eleva, bloqueando o sol. Saiba onde está a realização do homem. Saiba que a vida é inútil a menos que seja vivida nos dentes da Morte. A paz não é nada mais do que um momento passageiro no meio da GUERRA. O amor é vazio, exceto como um oásis transitório em um mundo de ódio violento, que criar é significativo apenas para destruir.
+
+Eu defendo a GUERRA. Eu glorifico a GUERRA. Eu glorifico a magnificência do homem na batalha, o homem lutando com a vida e a morte, o homem dando vazão à sua ira.
+
+Desprezo as vítimas de GUERRA fracas de vontade, as hordas de cidadãos indefesos, que clamam por misericórdia enquanto são expulsos de suas casas e de suas terras. Eles são a ração para as monstruosas máquinas de GUERRA, o combustível que as grandes máquinas da morte devoram em sua marcha implacável sobre a face da sua terra pútrida. Eles não merecem mais do que têm, pois não têm força, coragem ou vontade de se levantar e lutar, nenhum fogo dentro de suas almas para impeli-los à luta. Nasceram para uma morte fútil, uma morte miserável, um destino fraco e sem valor. Nasceram para serem pisoteados, para serem abatidos pela espada poderosa do conquistador. E tal é o destino deles, significativo apenas como parte do jogo da GUERRA.
+
+Assim, Homem, não perca mais tempo rastejando de barriga no pó. Levante-se e jogue fora as vestes de uma fachada civilizada. Livre-se do manto de respeitabilidade sem sentido. Despe-se até as raízes de sua natureza bestial. Liberte o animal dentro de você. Torne-se como você é: a Besta, nua e orgulhosa, dentes à mostra e olhos flamejantes, seus pés firmemente plantados no chão, seu rosto em direção ao inimigo. Liberte o monstro que jaz adormecido dentro de você, pois ele é forte e implacável, e seu poder está muito além das fraquezas humanas.
+
+Venha à tona em sua fúria selvagem, dominado pela luxúria pela batalha, tenso e trêmulo com a ânsia de golpear, de esmagar, de despedaçar tudo o que tenta detê-lo. E olhe para a terra diante de você. Escolha qual estrada de matança seguir. Então, avance sobre a terra e entre as pessoas. Mate com a precisão devastadora de seu braço armado, aleije com a crueldade impiedosa de sua piedade, destrua com a fúria avassaladora de sua força bestial, arrase com a majestade que tudo abrange de seu poder.
+
+E fique supremo sobre esta terra, senhor de toda a criação pelo direito da conquista. E queime o que ofende seu olhar, erradique o que estraga seu prazer, tome tudo para si e puna de forma mais cruel e sem misericórdia todos aqueles que tentam deter sua mão. Pois o mundo pode ser seu, e você pode ter seu prazer no mundo através da violência e do manejo da espada. E sua luxúria pode percorrer a terra, pegando o que deseja e descartando as cascas vazias quando as esgotar.
+
+GUERRA e violência são sua herança, e agora é o momento de reivindicá-las, de revelar as sombras ocultas de sua alma demoníaca, expô-las, segurá-las como bandeiras diante de você e gritar o seu grito de guerra diante do mundo.
+
+Nosso exército está pronto no campo de batalha e o massacre é a ordem do dia. Pois eu sou o mestre do meu mundo, e minha lei é a morte. Quem me segue, no final, conquistará tudo. Pois eu sou o mestre da GUERRA, o senhor de todas as conquistas e o governante do conflito violento.
+
+Pois eu sou o mestre do mundo, e minha lei é a morte. Quem me segue, no final, conquistará tudo. Pois eu sou o mestre da GUERRA, o senhor de todas as conquistas e o governante de todo o conflito violento.
+
+Ouça minha voz, pois o tempo é curto. A fase final da GUERRA está prestes a começar. Esteja na vanguarda da linha de batalha. Não seja uma peça sem valor, uma pena soprada pelo vento. Nunca anseie por paz ou descanso, pois isso não existe mais. E a salvação sempre foi do passado. Não busque ser deixado sozinho, para escapar do morticínio ardente deste holocausto, para se esconder da ira final dos deuses vingativos. Mas levante-se e marche para o centro do caos furioso. Desafie o cataclismo! Vista sua armadura brilhante e avance com as máquinas da morte. E observe a propagação gradual dessa doença lenta. Veja a morte prolongada da última fase da GUERRA. E deleite-se nas agonias do homem destruído, privado, humilhado e completamente degradado ao ponto da decadência sombria e uma morte fútil. E sacie-se com os horrores da perda irreparável; o destino miserável das vítimas que ainda restam, a impotente perplexidade do seu desespero, os piedosos clamores da sua suplicação inútil e a lamentação angustiada do seu luto. E esfregue seu inferno em seu próprio rosto de estupidez.
+
+Queime a palha da humanidade! Pois tal é seu desejo e merecimento. E dance a dança do dervixe em torno das chamas saltitantes.
+
+Novamente eu digo: Liberte o Monstro dentro de você!
+
+Liberte o Monstro! Liberte o Monstro!
+
+E o Monstro conquistará, e a palha será queimada.
+
+O Monstro empunhará um cutelo poderoso, e a terra será inanimada em seu rastro. E a palha será soprada como fumaça no vento de sua passagem.
+
+O Monstro devastará a terra, e seu rugido poderoso abalará os céus, para que as estrelas mesmas sintam sua presença. E a palha desaparecerá e será esquecida.
+
+Eu farei companhia ao Monstro. Vamos vagar juntos pela terra, dando força à espada cintilante e precisão infalível ao míssil veloz. Estaremos em todo campo de batalha e em toda cena de devastação. E nosso poder estará ao lado dos poderosos; força por força, poder por poder. E àquele que possui, mais será dado. Àquele que destrói com poder, será concedido um maior poder para destruição. E para aquele que massacra com força, mais vítimas para seu massacre impiedoso serão fornecidas. Mas aquele que não tem nada e se encurva diante da maré crescente da GUERRA, dele será tirado até mesmo o pouco que tem. Pois tal é seu desejo e merecimento. E mesmo a pequena força que ele tem para implorar por misericórdia será negada a ele, e sua língua o desobedecerá no momento final, e ele será abatido e destruído.
+
+E aquele que suplica temerosamente por sua vida será despedaçado.
+
+A marcha final do destino começou. Ele está preparado para a devastação. As poderosas máquinas de GUERRA estão alinhadas e reunidas no Fim. O cenário está montado. O Senhor LÚCIFER semeou as sementes da GUERRA, e agora chora ao vê-las brotar e florescer no solo fértil da natureza destrutiva do homem. O Senhor JEOVÁ decreta o Fim e a violência do Fim. Ele profetiza a colheita de um monumental massacre. E eu, o Senhor da destruição, com o meu exército dos condenados, vim para colher essa safra e alimentar minha fornalha com as almas dos temerosos.
+
+Pois no grande cataclismo dos últimos dias, o mundo será partido, e o homem será dividido. E aqueles que são fracos de espírito e mente, aqueles que se encolhem e clamam para serem poupados, aqueles que adotam a postura de vítima, a atitude do perdido e indefeso, aqueles que rastejam e desmoronam, tremem de terror e reclamam que outros além deles controlaram seu destino, aqueles que lamentam sua triste situação e negam toda a responsabilidade por seu destino, eles são a escória do universo, a inútil e fútil escória, que não representa nada, vive por nada e, no final, receberá nada. Pois eles serão varridos no redemoinho do grande desastre, serão espalhados como poeira pelo chão e então serão apanhados por um poderoso vórtice e sugados para as profundezas do Inferno.
+
+E os fortes, poderosos e implacáveis, criaturas do Monstro que o seguem, ficarão no cerne do caos furioso, espalhando a morte ao seu redor e a abraçando como se fosse um irmão há muito perdido. E aqueles que morrem na glória da batalha, aqueles que matam antes de morrer, aqueles que enfrentam a morte como um igual e não como um suplicante pálido, aqueles que permanecem orgulhosos e fortes, e não morrem como viveram, aqueles que se deleitam com as puras delícias da morte em vez de fugir impotentes diante de sua avalanche inexorável, eles são o meu povo nascido do submundo e criado nas abissais escuridões do Abismo. E eles serão o meu exército no Fim; fileira após fileira de anjos de coração mais negro das profundezas mais sombrias do Inferno.
+
+E quando o grande holocausto da destruição humana varrer a face da sua patética terra, destruindo tudo à sua frente, então o meu exército aparecerá, subindo das entranhas do mundo e seguindo no rastro do fogo devorador.
+
+E a terra será negra. Nenhuma árvore ficará verde nem se erguerá elegantemente do solo. Aqui e ali, um toco enegrecido marcará a passagem de uma floresta. E tudo será queimado, chamuscado e calcinado. Nada restará, exceto uma ferida monstruosa que nunca cicatrizará. E a terra se abrirá, e o Inferno engolirá o seu mundo de dentro para fora.
+
+E o fogo surgirá e cobrirá a terra, e atrás do fogo o exército de SATANÁS se espalhará pelo mundo enegrecido para ocupá-lo. E todas as horrendas criaturas do Abismo terão a liberdade da terra, e eu dominarei o mundo em poder e majestade, como é o meu direito. E os meus que lutaram e morreram ou lutaram e não morreram, os meus que encontraram prazer no cataclismo final, os que permaneceram no meio do caos e se regozijaram com o poder da GUERRA, eles não serão esquecidos. Pois eles terão conquistado a sua herança.
+
+E o mundo será meu, pois será meu pela conquista. SATANÁS no homem triunfará no Fim, e a terra será o meu escabelo. E aqueles que caminharam comigo governarão comigo. E aqueles que lutaram ao meu lado se sentarão ao meu lado em majestade.
+
+Avance! Prepare-se para o dia do acerto de contas! Pois ele já começou.
+
+E aquele que enfrentar o dia ensanguentado de seus inimigos será elevado e magnificado em força e poder. Aquele que for encontrado no meio da batalha, exalando a morte, o lábio curvado no desafio final, será renascido para governar imortal em seu mundo fragmentado de tortura. Mas aquele que for visto correndo e se escondendo, aquele que for ouvido clamando por misericórdia, aquele que desabar em desespero impotente, todos estarão condenados a uma tormenta interminável por sua fraqueza.
+
+E a terra será completamente destruída e o céu poluído, e a escuridão envolverá a terra. Cadáveres em decomposição vão jazer pelo chão e pelas cidades. Nenhuma criatura da ordem natural será deixada para testemunhar a devastação. Mas nós vamos percorrer a terra.
+
+E a partir desta cidadela queimada e enegrecida, os olhos do meu povo olharão para o universo. E quando chegar o momento, eu reunirei novamente o meu exército e, com o poder investido em seu mundo destruído, partirei para conquistar as estrelas. E vou espalhar o terror por todo o universo. E o meu povo irá na minha frente, e a GUERRA surgirá em cada canto da vasta e incalculável multidão de mundos que se estendem além do próprio tempo. Pois a extinção da humanidade é o único amanhecer do meu apocalipse completo.
+
+E assim como eu vou dominar o mundo, e o meu povo comigo, assim eu vou dominar o universo, e o meu poder e a minha força não terão limites. E as estrelas e os planetas e todos os seus habitantes estarão sob meu controle. Pelo incontestável direito da força superior, todo o universo ficará sob a minha jurisdição.
+
+E eu destruirei o universo inteiro. Pois a minha destruição se espalhará como um câncer a partir da terra, e espalhará a sua mancha de matança e decadência entre as estrelas, até que tudo seja destruído, toda a matéria morta e mutilada para um vazio inalterável. Então, serei livre e todos os Meus súditos também serão livres; quando toda a matéria for destruída, toda a existência física reduzida a uma massa amorfa.
+
+Então, vamos percorrer a eternidade desamarrados do fardo da criação material. Pois quando deixarmos de jazer sob o mundo dos homens, submersos em um pântano de carne pútrida, quando tivermos explorado suas profundezas, nos regozijado com seus gritos ensurdecedores, rasgado-o e, assim, escapado de suas garras paralisantes, então transcenderemos seus limites e nos elevaremos às alturas mais altas da realização espiritual.
+
+Pois eu incorporo tanto o mais baixo quanto o mais alto. Eu sou ABRAXAS. Sou o Deus tanto da destruição final quanto da criação final. São Meus tanto os horrendos demônios negros do Abismo quanto as belas hordas angelicais brancas que transcendem o próprio céu. Sou a personificação tanto da morte quanto da vida, vida e morte. Sou o corpo nas profundezas da depravação escura, e sou a alma nas alturas do êxtase espiritual sublime. As legiões dos condenados são Minhas, assim como a grande companhia dos arcanjos serafins. E quando os laços da matéria não me prenderem mais, então eu e o Meu povo, o Meu exército, as Minhas legiões, todos os Meus seguidores, nos levantaremos dos ingratos Céus e transcenderemos para conquistar e extinguir as estrelas.
+
+Eu sou o corpo e a alma do homem. Enquanto o Monstro do corpo estiver escravizado pela mente temerosa, a alma estará aprisionada. Só quando o Monstro for libertado é que a alma será verdadeiramente livre.
+
+Então, eu vim para liberar o Monstro, para soltá-lo sobre a terra nos últimos dias, para que o mundo termine com nada menos que a destruição máxima da guerra total. E aqueles que aceitarem o Fim e desempenharem seu papel juntamente com o Monstro para trazer o Fim, aqueles que se destacarem orgulhosos e destemidos no meio do fim e empunharem comigo a espada da destruição máxima, eles reinarão comigo quando a humanidade estiver finalmente extinta, e depois buscarão a liberdade comigo na conquista do universo.
+
+Mas aqueles que tentarem impedir a Minha mão, prender o Monstro, paralisar as máquinas da morte e evitar o inevitável Fim, estarão condenados ao fracasso; um fracasso triste, fútil e sem valor. Pois o Fim deve ser, e nada o impedirá ou adiará.
+
+Então, levante-se e prepare-se para a batalha final. Fique orgulhoso na monstruosa presença da morte violenta e toque as trombetas da GUERRA.
+
+Invoque o cataclismo!
+
+E no sinal, quando os céus se romperem e uma furiosa e cegante fúria envolver a terra:
+
+Liberte o Monstro!
+
+E marche com nosso exército até o Fim.`).then(e => console.log(`Código finalizado, ${e} mensagens enviadas`)).catch(console.error)
